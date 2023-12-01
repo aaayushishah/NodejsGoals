@@ -26,10 +26,10 @@ app.use("/cart", cartRoutes);
 app.use("/order", orderRoutes);
 app.use("/file", imageRoutes);
 app.use(ErrorHandler);
-mongoose.connect(process.env.DB_CONNECTION, () => {
+mongoose.connect(process.env.DB_CONNECTION_TEST, () => {
   console.log("Connected to DB");
 });
 app.listen(PORT, () => {
-  console.log("process.env.DB_CONNECTION: ", process.env.DB_CONNECTION);
+  console.log("process.env.DB_CONNECTION: ", process.env.DB_CONNECTION_TEST);
   console.log(`Server running on PORT: ${PORT}`);
 });

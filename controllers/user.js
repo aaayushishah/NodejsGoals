@@ -107,7 +107,7 @@ const loginProcess = async (req, res) => {
     return res.status(400).send({ message: "Invalid Password" });
   const token = await jwt.sign(
     { _id: user._id, email: user.email, isAdmin: user.isAdmin },
-    process.env.TOKEN_SECRET
+    process.env.TOKEN_SECRET_TEST
   );
   return token;
 };
